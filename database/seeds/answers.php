@@ -21,6 +21,7 @@ class answers extends Seeder
                 'user_id'     => $faker->numberBetween(1, 10),
                 'question_id' => $faker->numberBetween(1, 20),
                 'body'        => $faker->realText(),
+                'created_at'  => $faker->dateTime(),
             ]);
         }
         

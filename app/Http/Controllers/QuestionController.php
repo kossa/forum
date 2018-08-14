@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Category;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -44,9 +45,9 @@ class QuestionController extends Controller
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show(Category $category, Question $question)
     {
-        //
+        return view('questions.show', compact('category', 'question'));
     }
 
     /**

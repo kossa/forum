@@ -15,9 +15,9 @@
         @foreach ($category->questions as $question)
             <tr>
                 <td>{{ $question->id }}</td>
-                <td><a href="#">{{ $question->name }}</a></td>
-                <td>{{ $question->user_id }}</td>
-                <td>{{ $question->created_at }}</td>
+                <td><a href="{{ route('question.show', [$category, $question]) }}">{{ $question->name }}</a></td>
+                <td>{{ $question->user->name }}</td>
+                <td>{{ $question->since }}</td>
             </tr>
         @endforeach
       </tbody>

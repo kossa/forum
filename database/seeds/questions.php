@@ -27,6 +27,7 @@ class questions extends Seeder
                 'category_id' => $faker->randomElement($categories),
                 'name'        => $faker->sentence(),
                 'body'        => $faker->realText(),
+                'created_at'  => $faker->dateTime(),
             ]);
         }
         
