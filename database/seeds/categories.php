@@ -16,7 +16,7 @@ class categories extends Seeder
         
         $data = [];
         
-        for($i = 1; $i <= 10 ; $i++) {
+        for($i = 1; $i <= 5 ; $i++) {
             array_push($data, [
                 'name' => $faker->word,
             ]);
