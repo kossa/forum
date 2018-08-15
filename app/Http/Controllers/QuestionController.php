@@ -25,7 +25,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('questions.create');
     }
 
     /**
@@ -36,7 +36,16 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $question = Question::create([
+        //     'user_id'     => auth()->id(),
+        //     'category_id' => request('category_id'),
+        //     'name'        => request('name'),
+        //     'body'        => request('body'),
+        // ]);
+
+        auth()->user()->questions()->create(request()->all());
+
+        return redirect()->route('category.show', request('category_id'))->withSuccess('Votre question a été ajoutée');
     }
 
     /**

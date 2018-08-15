@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
+
+    protected $fillable = [
+        'category_id', 'name', 'body', ];
     //
     protected $with = ['user'];
 
