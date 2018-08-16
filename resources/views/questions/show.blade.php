@@ -12,5 +12,15 @@
         <p><strong>{{ $answer->user->name }}</strong>: {{ $answer->body }}</p>
       </article>
     @endforeach
+    <hr>
+    <form action="{{ route('answer.store') }}" method="POST">
+        @csrf
+        <input type="hidden" name="question_id" value="{{ $question->id }}">
+        <div class="form-group">
+            <label>Repondre</label>
+            <textarea name="body" id="" rows="4" class="form-control"></textarea>
+        </div>
+        <button class="btn btn-success">Repondre</button>
+    </form>
 
 @endsection

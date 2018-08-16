@@ -35,7 +35,11 @@ class AnswerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'body' => 'required'
+        ]);
+        auth()->user()->answers()->create(request()->all());
+        return back()->withSuccess('Reponse ajoutée');   
     }
 
     /**
